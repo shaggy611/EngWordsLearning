@@ -3,6 +3,7 @@ import WordsContext from './context/WordsContext'
 import './App.css'
 import FetchButton from './components/FetchButton'
 import LinearProgress from '@mui/material/LinearProgress'
+import Menu from './components/Menu'
 
 function App() {
   const [wordPair, setWordPair] = useState({})
@@ -12,6 +13,7 @@ function App() {
     <>
       <WordsContext.Provider
         value={{ wordPair, setWordPair, loader, setLoader }}>
+        <Menu />
         {loader && <LinearProgress color='success' />}
 
         <br />
