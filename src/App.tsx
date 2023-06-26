@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import WordsContext from './context/WordsContext'
 import './App.css'
-
+import FetchButton from './components/FetchButton'
 import LinearProgress from '@mui/material/LinearProgress'
-import fetchNotionData from './utils/api'
 
 function App() {
   const [wordPair, setWordPair] = useState({})
@@ -10,10 +10,16 @@ function App() {
 
   return (
     <>
-      {loader && <LinearProgress color='success' />}
+      <WordsContext.Provider
+        value={{ wordPair, setWordPair, loader, setLoader }}>
+        {loader && <LinearProgress color='success' />}
 
-      <div>{wordPair.eng}</div>
-      <div>{wordPair.ukr}</div>
+        <br />
+        <FetchButton />
+        <br />
+        <div>{wordPair.eng}</div>
+        <div>{wordPair.ukr}</div>
+      </WordsContext.Provider>
     </>
   )
 }
