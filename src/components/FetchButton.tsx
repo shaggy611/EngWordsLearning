@@ -2,9 +2,10 @@ import { useContext } from 'react'
 import Button from '@mui/material/Button'
 import fetchNotionData from '../utils/api'
 import WordsContext from '../context/WordsContext'
+import { ContextTypes } from '../types'
 
 function FetchButton() {
-  const { setWordPair, loader, setLoader } = useContext(WordsContext)
+  const { setWordPair, setLoader } = useContext(WordsContext) as ContextTypes
 
   async function getWords() {
     setLoader(true)
