@@ -2,7 +2,7 @@ import { useState } from 'react'
 import WordsContext from '../context/WordsContext'
 import Container from '@mui/material/Container'
 import FetchButton from './FetchButton'
-import LinearProgress from '@mui/material/LinearProgress'
+// import LinearProgress from '@mui/material/LinearProgress'
 import Menu from './Menu'
 import Divider from '@mui/material/Divider'
 import Box from '@mui/material/Box'
@@ -17,7 +17,7 @@ function GlobalLayout() {
       <WordsContext.Provider
         value={{ wordPair, setWordPair, loader, setLoader }}>
         <Menu />
-        {loader && <LinearProgress color='success' />}
+        {/* {loader && <LinearProgress color='success' />} */}
         <Container sx={{ height: '100vh' }}>
           <Box pt={10} pb={2} sx={{ textAlign: 'center' }}>
             <FetchButton />
