@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import WordsContext from '../context/WordsContext'
 import Container from '@mui/material/Container'
 import FetchButton from './FetchButton'

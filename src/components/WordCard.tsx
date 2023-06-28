@@ -1,8 +1,9 @@
 import { Paper } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack'
+import { WordCardProps } from '../types'
 
-function WordCard({ text }) {
+function WordCard({ text }: WordCardProps) {
   return (
     <Paper elevation={5}>
       <Stack

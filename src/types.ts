@@ -6,3 +6,7 @@ export interface ContextTypes {
   loader?: boolean
   setLoader(loader: boolean): boolean
 }
+
+export interface WordCardProps {
+  text: string
+}
