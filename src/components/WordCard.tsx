@@ -2,7 +2,7 @@ import { Paper, Skeleton } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack'
 import { ContextTypes, WordCardProps } from '../types'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import WordsContext from '../context/WordsContext'
 
 function WordCard({ text, bluredFirst }: WordCardProps) {
