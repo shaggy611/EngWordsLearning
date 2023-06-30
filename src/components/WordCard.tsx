@@ -6,11 +6,27 @@ import { useContext } from 'react'
 import WordsContext from '../context/WordsContext'
 
 function WordCard({ text, bluredFirst }: WordCardProps) {
-  const { loader,  blured, setBlured} = useContext(WordsContext) as ContextTypes
- 
+  const { loader, blured, setBlured } = useContext(WordsContext) as ContextTypes
 
   return (
-    <Paper elevation={5} onClick={() => (bluredFirst ? setBlured(!blured) : blured)}>
+    <Paper
+      elevation={5}
+      sx={{ cursor: 'pointer', position: 'relative' }}
+      onClick={() => (bluredFirst ? setBlured(!blured) : blured)}>
+      {bluredFirst && (
+        <Typography
+          sx={{
+            fontSize: '0.8rem',
+            position: 'absolute',
+            top: '5px',
+            left: '10px',
+          }}
+          p={0}
+          align='center'>
+          Click to show text
+        </Typography>
+      )}
+
       <Stack
         direction='row'
         justifyContent='center'
@@ -21,7 +37,7 @@ function WordCard({ text, bluredFirst }: WordCardProps) {
           sx={{
             fontSize: 24,
             width: '100%',
-            filter: (bluredFirst && blured) ? 'blur(5px)' : '',
+            filter: bluredFirst && blured ? 'blur(5px)' : '',
           }}
           p={3}
           align='center'>
