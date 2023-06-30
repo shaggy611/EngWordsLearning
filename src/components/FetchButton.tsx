@@ -11,6 +11,7 @@ function FetchButton() {
     setLoader(true)
 
     const pairWords = await fetchNotionData()
+    console.log(pairWords)
     setWordPair(pairWords)
 
     setLoader(false)

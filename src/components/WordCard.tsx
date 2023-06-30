@@ -2,21 +2,29 @@ import { Paper, Skeleton } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack'
 import { ContextTypes, WordCardProps } from '../types'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import WordsContext from '../context/WordsContext'
 
-function WordCard({ text }: WordCardProps) {
-  const { loader } = useContext(WordsContext) as ContextTypes
+function WordCard({ text, bluredFirst }: WordCardProps) {
+  const { loader,  blured, setBlured} = useContext(WordsContext) as ContextTypes
+ 
 
   return (
-    <Paper elevation={5}>
+    <Paper elevation={5} onClick={() => (bluredFirst ? setBlured(!blured) : blured)}>
       <Stack
         direction='row'
         justifyContent='center'
         alignItems='center'
         spacing={2}
-        sx={{ minHeight: '100px' }}>
-        <Typography sx={{ fontSize: 24, width: '100%' }} p={3} align='center'>
+        sx={{ minHeight: '150px' }}>
+        <Typography
+          sx={{
+            fontSize: 24,
+            width: '100%',
+            filter: blured ? 'blur(5px)' : '',
+          }}
+          p={3}
+          align='center'>
           {!loader ? (
             text
           ) : (

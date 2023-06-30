@@ -19,7 +19,7 @@ interface Props {
 }
 
 const drawerWidth = 240
-const navItems = ['Home', 'About', 'Contact']
+const navItems = ['Home', 'About']
 
 export default function Menu(props: Props) {
   const { window } = props

@@ -5,8 +5,13 @@ export interface ContextTypes {
   }
   loader?: boolean
   setLoader(loader: boolean): boolean
+  learnLanguage: string
+  setLearnLanguage(learnLanguage: string): string
+  blured: boolean
+  setBlured(blured: boolean): boolean
 }
 
 export interface WordCardProps {
   text: string
+  bluredFirst?: boolean
 }

@@ -1,7 +1,5 @@
 import { createContext } from 'react'
 
-const WordsContext = createContext({
-    
-})
+const WordsContext = createContext({})
 
 export default WordsContext
