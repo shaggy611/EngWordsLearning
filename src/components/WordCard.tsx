@@ -21,7 +21,7 @@ function WordCard({ text, bluredFirst }: WordCardProps) {
           sx={{
             fontSize: 24,
             width: '100%',
-            filter: blured ? 'blur(5px)' : '',
+            filter: (bluredFirst && blured) ? 'blur(5px)' : '',
           }}
           p={3}
           align='center'>

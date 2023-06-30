@@ -5,7 +5,9 @@ import WordsContext from '../context/WordsContext'
 import { ContextTypes } from '../types'
 
 function FetchButton() {
-  const { setWordPair, setLoader } = useContext(WordsContext) as ContextTypes
+  const { setWordPair, setLoader, blured, setBlured } = useContext(
+    WordsContext
+  ) as ContextTypes
 
   async function getWords() {
     setLoader(true)
@@ -13,7 +15,7 @@ function FetchButton() {
     const pairWords = await fetchNotionData()
     console.log(pairWords)
     setWordPair(pairWords)
-
+    setBlured(!blured)
     setLoader(false)
   }
 
