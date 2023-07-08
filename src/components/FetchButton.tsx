@@ -5,7 +5,7 @@ import WordsContext from '../context/WordsContext'
 import { ContextTypes } from '../types'
 
 function FetchButton() {
-  const { setWordPair, setLoader, blured, setBlured } = useContext(
+  const { setWordPair, setLoader, setBlured } = useContext(
     WordsContext
   ) as ContextTypes
 
