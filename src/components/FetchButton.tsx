@@ -13,9 +13,8 @@ function FetchButton() {
     setLoader(true)
 
     const pairWords = await fetchNotionData()
-    console.log(pairWords)
+    setBlured(true)
     setWordPair(pairWords)
-    setBlured(!blured)
     setLoader(false)
   }
 
